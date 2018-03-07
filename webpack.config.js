@@ -2,21 +2,24 @@
  * @Author: pimliulu 
  * @Date: 2018-03-05 10:53:46 
  * @Last Modified by: pimliulu
- * @Last Modified time: 2018-03-06 15:05:30
+ * @Last Modified time: 2018-03-07 15:08:42
  */
 var webpack = require('webpack');
 var path = require('path');
 var glob = require('glob');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CleanWebpackPlugin = require('clean-webpack-plugin');
+
 // 多入口配置
 var getEntry = function () {
+// 'index'             : ['./src/page/index/index.js']
   var entry = {};
   // [ './Test/index/Greeter.js', './Test/index/index.js' ]
-  glob.sync('./Test/**/*.js').forEach(function (name) {
-    var n = name.slice(name.lastIndexOf('Test/') + 5, name.length - 3);
+  glob.sync('./src/template/**/*.js').forEach(function (name) {
+    var n = name.slice(name.lastIndexOf('src/template/') + 13, name.length - 3);
+    console.log(n);
     n = n.slice(0, n.lastIndexOf('/'));
+    console.log(n);
     entry[n] = name;
   });
   console.log(entry);
@@ -25,7 +28,7 @@ var getEntry = function () {
 // 获取html-webpack-plugin参数的方法 
 var getHtmlConfig = function (name, title) {
   return {
-    template: './Test/Index/' + name + '.html',
+    template: './src/view/' + name + '.html',
     filename: './view/' + name + '.html',
     title: title,
     inject: true,
@@ -33,16 +36,12 @@ var getHtmlConfig = function (name, title) {
   };
 };
 
-
 var config = {
   entry: getEntry(),
   output: {
-    path: './dist',
-    publicPath: './dist',
+    path: './dist/',
+    publicPath: '/dist/',
     filename: 'js/[name].js'
-  },
-  devServer: {
-    contentBase: './dist'
   },
   // 外部扩展 防止将某些 import 的包(package)打包
   externals: {
@@ -69,18 +68,25 @@ var config = {
             }
           }
         ]
+      },
+      // 防止和HtmlWebpackPlugin冲突，改成ejs模板
+      {
+        test: /\.(ejs)$/,
+        use: {
+          loader: 'html-loader'
+        }
       }
     ]
   },
   plugins: [
     // 公共模块处理
-    // new webpack.optimize.CommonsChunkPlugin({
-
-    // }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common',
+      filename: 'js/base.js'
+    }),
     new ExtractTextPlugin("css/[name].css"),
     // 处理html模板，由于这里是商城，所以会有多个模板
-    new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
-    new CleanWebpackPlugin('dist')
+    new HtmlWebpackPlugin(getHtmlConfig('index', '首页'))
   ]
 };
 

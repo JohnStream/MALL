@@ -1,0 +1,33 @@
+footer{
+    width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+  .footer-bottom-list{
+      float: left;
+      width: 298px;
+      text-align: center;
+      font-size: 14px;
+      color: #a69f9e;
+      line-height: 24px;
+      margin: 0 50px 0 0;
+  }
+  .footer-bottom-list img{
+      float: left;
+  }
+  .enjoy-list{
+    width: 105px;
+    font-size: 18px;
+    color: #bab4b3;
+    margin: 0 0 0 38px;
+    float: right;
+  }
+  .enjoy-a-div {
+    padding-top: 10px;
+    position: relative;
+}
+.bottom-desc p {
+    margin-top: 15px;
+    text-align: center;
+}

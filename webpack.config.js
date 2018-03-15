@@ -2,7 +2,7 @@
  * @Author: pimliulu 
  * @Date: 2018-03-05 10:53:46 
  * @Last Modified by: pimliulu
- * @Last Modified time: 2018-03-10 14:49:15
+ * @Last Modified time: 2018-03-14 16:13:55
  */
 var webpack = require('webpack');
 var path = require('path');
@@ -77,7 +77,7 @@ var config = {
             loader: 'url-loader',
             options: {
               limit: 1024,
-              name: "img/[name].[ext]"
+              name: "images/[name].[ext]"
             }
           }
         ]
@@ -97,6 +97,7 @@ var config = {
       name: 'common',
       filename: 'js/base.js'
     }),
+    // 把css单独打包到文件里
     new ExtractTextPlugin("css/[name].css"),
     // 处理html模板，由于这里是商城，所以会有多个模板
     new HtmlWebpackPlugin(getHtmlConfig('index', '首页'))

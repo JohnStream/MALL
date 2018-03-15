@@ -4,7 +4,8 @@
   "description": "前后端分离项目实践",
   "main": "index.js",
   "dependencies": {
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "minireset.css": "0.0.3"
   },
   "devDependencies": {
     "css-loader": "^0.28.1",

@@ -2,7 +2,7 @@
  * @Author: pimliulu 
  * @Date: 2018-03-05 10:53:46 
  * @Last Modified by: pimliulu
- * @Last Modified time: 2018-03-16 16:51:14
+ * @Last Modified time: 2018-03-20 17:26:18
  */
 var webpack = require('webpack');
 var path = require('path');
@@ -111,8 +111,8 @@ var config = {
   // 代理设置，解决跨域问题
   devServer: {
     proxy: {
-      '/product': {
-        target: 'http://happymmall.com/',
+      '/user': {
+        target: 'http://localhost:5000/api/',
         changeOrigin: true
       }
     }

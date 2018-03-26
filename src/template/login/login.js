@@ -1,6 +1,6 @@
+'use strict'
 require('./login.css');
-var _user   = require('../../../Service/user-service');
-
+var _user = require('../../service/user.js')
 var page = {
     init: function(){
         this.bindEvent();
@@ -19,18 +19,19 @@ var page = {
             }
         });
     },
+    // 提交表单
     submit : function(){
-       var formdata = {
-        username : $.trim($('#username').val()),
-        password : $.trim($('#password').val())
-       }
-       _user.login(formdata,function(res){
-           console.log(res);
-    }, function(errMsg){
-        console.log(errMsg);
-    })
-    }
-}
+        var formData = {
+                username : $.trim($('#username').val()),
+                password : $.trim($('#password').val())
+            }
+            _user.login(JSON.stringify(formData),function(res){
+                window.location.href = './index.html';
+            },function(errMsg){
+                console.log(errMsg)
+            })       
+    },
+};
 $(function(){
     page.init();
 });

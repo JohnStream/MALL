@@ -45,3 +45,6 @@ header a:hover {
   margin: 25px;
   vertical-align: middle;
 }
+.user-list .hidden {
+  display: none;
+}

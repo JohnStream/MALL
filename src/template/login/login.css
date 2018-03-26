@@ -193,3 +193,6 @@ html {
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
+.create-account{
+  text-align: center;
+}

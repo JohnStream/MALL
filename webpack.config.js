@@ -2,7 +2,7 @@
  * @Author: pimliulu 
  * @Date: 2018-03-05 10:53:46 
  * @Last Modified by: pimliulu
- * @Last Modified time: 2018-03-20 17:26:18
+ * @Last Modified time: 2018-03-26 15:25:00
  */
 var webpack = require('webpack');
 var path = require('path');
@@ -45,7 +45,8 @@ var config = {
   entry: {
     'common'            : ['./src/template/common/index.js'],
     'index'             : ['./src/template/index/index.js'],
-    'login'             : ['./src/template/login/login.js']     
+    'login'             : ['./src/template/login/login.js'],
+    'register'          : ['./src/template/register/register.js']
 },
   output: {
     path: path.resolve(__dirname, "dist/"),
@@ -106,13 +107,14 @@ var config = {
     new ExtractTextPlugin("css/[name].css"),
     // 处理html模板，由于这里是商城，所以会有多个模板
     new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
-    new HtmlWebpackPlugin(getHtmlConfig('login','登录'))
+    new HtmlWebpackPlugin(getHtmlConfig('login','登录')),
+    new HtmlWebpackPlugin(getHtmlConfig('register','注册'))
   ],
   // 代理设置，解决跨域问题
   devServer: {
     proxy: {
       '/user': {
-        target: 'http://localhost:5000/api/',
+        target: 'http://localhost:5000/',
         changeOrigin: true
       }
     }

@@ -22,6 +22,14 @@ var _user = {
       success: resolve,
       error: reject
     });
-  }
+  },
+  // 检查登录状态
+  checkLogin : function(resolve, reject){
+    _res.request({
+        url     : '/user/getUserInfo',
+        success : resolve,
+        error   : reject
+    });
+}
 };
 module.exports = _user;

@@ -2,13 +2,11 @@
  * @Author: pimliulu 
  * @Date: 2018-03-26 11:13:49 
  * @Last Modified by: pimliulu
- * @Last Modified time: 2018-04-09 13:58:10
+ * @Last Modified time: 2018-04-09 17:46:10
  */
 "use strict";
-const mock = require('./mock');
-
+const mock = require("./mock");
 var _res = {
-  
   // 网络请求
   request: function(param) {
     var _this = this;
@@ -19,10 +17,10 @@ var _res = {
       url: param.url || "",
       data: param.data || "",
       dataType: param.type || "json",
-      contentType:"application/json" || '',  
+      contentType: "application/json" || "",
       // 成功
       success: function(res) {
-        console.log(res)
+        console.log(res);
         if (res.status === 0) {
           typeof param.success === "function" &&
             param.success(res.data, res.msg);

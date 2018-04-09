@@ -2,7 +2,7 @@
  * @Author: pimliulu 
  * @Date: 2018-03-05 10:53:46 
  * @Last Modified by: pimliulu
- * @Last Modified time: 2018-04-09 14:56:34
+ * @Last Modified time: 2018-04-09 17:44:45
  */
 var webpack = require("webpack");
 var path = require("path");
@@ -10,27 +10,6 @@ var glob = require("glob");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var WEBPACK_ENV = process.env.WEBPACK_ENV || "dev";
-// 多入口配置
-// var getEntry = function () {
-//   // 'index'             : ['./src/page/index/index.js']
-//   var entry = {};
-//   // [ './Test/index/Greeter.js', './Test/index/index.js' ]
-//   glob.sync('./src/template/**/*.js').forEach(function (name) {
-//     var n = name.slice(name.lastIndexOf('src/template/') + 13, name.length - 3);
-//     var names = [];
-//     console.log(n); // index/index
-//     n = n.slice(0, n.lastIndexOf('/'));
-//     console.log(n); // index
-//     names.push(name)
-//     if ('dev' === WEBPACK_ENV) {
-//       names.push('webpack-dev-server/client?http://localhost:8088/');
-//     }
-//     entry[n] = names;
-//   });
-//   console.log(entry);
-//   return entry;
-// };
-// 获取html-webpack-plugin参数的方法
 var getHtmlConfig = function(name, title) {
   return {
     template: "./src/view/" + name + ".html",
@@ -96,13 +75,13 @@ var config = {
           }
         ]
       },
-      // 防止和HtmlWebpackPlugin冲突，改成ejs模板
-      {
-        test: /\.tpl$/,
-        use: {
-          loader: "html-loader"
-        }
-      }
+      // // 防止和HtmlWebpackPlugin冲突，改成ejs模板
+      // {
+      //   test: /\.ejs$/,
+      //   use: {
+      //     loader: 'html-loader'
+      //   }
+      // }
     ]
   },
   plugins: [

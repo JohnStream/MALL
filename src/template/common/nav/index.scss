@@ -1,0 +1,45 @@
+header {
+    background: #eee;
+    height: 100px;
+    line-height: 100px;
+    .inner-header {
+        width: 1280px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        .logo {
+            float: left;
+            img {
+                margin: 25px;
+                vertical-align: middle;
+            }
+        }
+        nav {
+            overflow: hidden;
+            a {
+                color: #333333;
+                cursor: pointer;
+                text-decoration: none;
+                &:hover {
+                    color: #188ae2;
+                    text-decoration: #188ae2;
+                }
+            }
+            .nav-list {
+                float: left;
+                li {
+                    vertical-align: middle;
+                    display: inline-block;
+                    margin-left: 35px;
+                }
+            }
+            .user-list {
+                float: right;
+                li {
+                    margin-right: 25px;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}

@@ -1,5 +1,5 @@
 'use strict'
-require('./login.scss');
+require('./login.css');
 const _user = require('service/user.js')
 const page = {
     init: function(){

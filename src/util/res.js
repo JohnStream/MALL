@@ -2,9 +2,10 @@
  * @Author: pimliulu 
  * @Date: 2018-03-26 11:13:49 
  * @Last Modified by: pimliulu
- * @Last Modified time: 2018-04-09 17:46:10
+ * @Last Modified time: 2018-04-09 19:00:00
  */
 "use strict";
+const  Hogan = require('hogan.js');
 const mock = require("./mock");
 var _res = {
   // 网络请求
@@ -42,6 +43,11 @@ var _res = {
   },
   goHome: function() {
     window.location.href = "./index.html";
+  },
+  renderHtml: function(htmlTemplate, data) {
+    var template = Hogan.compile(htmlTemplate),
+      result = template.render(data);
+    return result;
   }
 };
 module.exports = _res;

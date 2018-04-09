@@ -5,7 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "font-awesome": "^4.7.0",
-    "minireset.css": "0.0.3"
+    "minireset.css": "0.0.3",
+    "hogan": "^1.0.2"
   },
   "devDependencies": {
     "css-loader": "^0.28.1",

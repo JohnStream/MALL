@@ -1,0 +1,30 @@
+.middle{
+    width: 1080px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    .keywords-list{
+        float: left;
+        width: 240px;
+        margin-right: 10px;
+        background: #eeeeee;
+        color: #fff;
+        .keywords-item{   
+            padding-left: 10px;
+            height: 35px;
+            line-height: 35px;
+            font-size: 14px;
+            &:hover{
+                background: #188ae2;
+            }
+            .link{
+                text-decoration: none;
+                margin-right: 6px;
+                color: #333333;
+                &:hover{
+                    color:  #fff;
+                }
+            }
+        }
+    }
+}

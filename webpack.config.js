@@ -2,7 +2,7 @@
  * @Author: pimliulu 
  * @Date: 2018-03-05 10:53:46 
  * @Last Modified by: pimliulu
- * @Last Modified time: 2018-04-09 17:44:45
+ * @Last Modified time: 2018-04-09 18:56:30
  */
 var webpack = require("webpack");
 var path = require("path");
@@ -75,13 +75,10 @@ var config = {
           }
         ]
       },
-      // // 防止和HtmlWebpackPlugin冲突，改成ejs模板
-      // {
-      //   test: /\.ejs$/,
-      //   use: {
-      //     loader: 'html-loader'
-      //   }
-      // }
+      {
+        test: /\.string$/,
+        use:["html-loader"]
+      }
     ]
   },
   plugins: [

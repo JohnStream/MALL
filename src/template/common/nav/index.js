@@ -1,5 +1,5 @@
-require("./index.css");
-var _user = require("service/user.js");
+require("./index.scss");
+const _user = require("service/user.js");
 var nav = {
   init: function() {
     this.loadUserInfo();

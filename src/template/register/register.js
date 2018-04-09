@@ -1,5 +1,5 @@
 "use strict";
-require("./register.css");
+require("./register.scss");
 var _user = require("../../service/user.js");
 var page = {
   init: function() {

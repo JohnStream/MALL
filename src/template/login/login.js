@@ -1,7 +1,7 @@
 'use strict'
-require('./login.css');
-var _user = require('service/user.js')
-var page = {
+require('./login.scss');
+const _user = require('service/user.js')
+const page = {
     init: function(){
         this.bindEvent();
     },

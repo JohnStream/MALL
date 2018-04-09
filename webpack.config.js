@@ -2,7 +2,7 @@
  * @Author: pimliulu 
  * @Date: 2018-03-05 10:53:46 
  * @Last Modified by: pimliulu
- * @Last Modified time: 2018-03-26 15:25:00
+ * @Last Modified time: 2018-04-09 11:33:14
  */
 var webpack = require('webpack');
 var path = require('path');
@@ -63,7 +63,8 @@ var config = {
       node_modules: __dirname + '/node_modules',
       util: __dirname + '/src/util',
       template: __dirname + '/src/template',
-      image: __dirname + '/src/images'
+      image: __dirname + '/src/images',
+      service: __dirname + '/src/service'
     }
   },
   // 模块
@@ -111,14 +112,14 @@ var config = {
     new HtmlWebpackPlugin(getHtmlConfig('register','注册'))
   ],
   // 代理设置，解决跨域问题
-  devServer: {
-    proxy: {
-      '/user': {
-        target: 'http://localhost:5000/',
-        changeOrigin: true
-      }
-    }
-  }
+  // devServer: {
+  //   proxy: {
+  //     '/user': {
+  //       target: 'http://localhost:5000/',
+  //       changeOrigin: true
+  //     }
+  //   }
+  // }
 };
 
 module.exports = config;

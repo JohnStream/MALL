@@ -1,6 +1,6 @@
 'use strict'
 require('./login.css');
-var _user = require('../../service/user.js')
+var _user = require('service/user.js')
 var page = {
     init: function(){
         this.bindEvent();

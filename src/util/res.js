@@ -2,7 +2,7 @@
  * @Author: pimliulu 
  * @Date: 2018-03-26 11:13:49 
  * @Last Modified by: pimliulu
- * @Last Modified time: 2018-03-26 19:44:10
+ * @Last Modified time: 2018-04-09 11:30:19
  */
 "use strict";
 
@@ -18,6 +18,7 @@ var _res = {
       contentType:"application/json" || '',  
       // 成功
       success: function(res) {
+        console.log(res);
         if (res.status === 0) {
           typeof param.success === "function" &&
             param.success(res.data, res.msg);

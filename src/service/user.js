@@ -1,7 +1,5 @@
 "use strict";
-
 var _res = require("../util/res");
-
 var _user = {
   // 登录
   login: function(userInfo, resolve, reject) {
@@ -24,12 +22,12 @@ var _user = {
     });
   },
   // 检查登录状态
-  checkLogin : function(resolve, reject){
+  checkLogin: function(resolve, reject) {
     _res.request({
-        url     : '/user/getUserInfo',
-        success : resolve,
-        error   : reject
+      url: "/user/checkLogin",
+      success: resolve,
+      error: reject
     });
-}
+  }
 };
 module.exports = _user;
